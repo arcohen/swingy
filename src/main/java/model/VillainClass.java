@@ -10,5 +10,6 @@ package model;
  * @author arcohen
  */
 class VillainClass {
-    
+    String name;
+    String description;
 }

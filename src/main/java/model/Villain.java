@@ -10,5 +10,5 @@ package model;
  * @author arcohen
  */
 class Villain extends Character {
-    
+    VillainClass villainClass;
 }
