@@ -13,5 +13,5 @@ public class Character {
     int hitPoints;
     int attack;
     int defense;
-    Coordinates position;
+    Coordinates coordinates;
 }

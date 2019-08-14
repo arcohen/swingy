@@ -12,11 +12,23 @@ import java.util.List;
  * @author arcohen
  */
 public class Hero extends Character {
-    HeroClass heroClass;
-    String name;
-    int level;
-    int xp;
-    List<Artifact> artifacts;
-    Map map;
+    private HeroClass heroClass;
+    private String name;
+    private int level;
+    private int xp;
+    private List<Artifact> artifacts;
+    private Map map;
+    
+    public void Hero(HeroClass heroClass, String name) {
+        this.attack = heroClass.attack;
+        this.defense = heroClass.defense;
+        this.hitPoints = heroClass.hitPoints;
+        
+        this.name = name;
+        
+        coordinates = new Coordinates();
+        
+        this.map = new Map(1);
+    }
 }
   

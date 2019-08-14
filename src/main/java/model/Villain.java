@@ -5,10 +5,23 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author arcohen
  */
-class Villain extends Character {
-    VillainClass villainClass;
+public class Villain extends Character {
+    private VillainClass villainClass;
+    
+    public Villain(int size, List<Villain> villains) {
+        coordinates = new Coordinates(size);
+        
+        for (int i = 0; i < villains.size(); i++) {
+            if (villains.get(i).coordinates.exists(this.coordinates)) {
+                this.coordinates.newCoordinates(size);
+                i = 0;
+            }
+        }
+    }
 }

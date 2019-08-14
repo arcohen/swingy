@@ -5,16 +5,12 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author arcohen
  */
-public class VillainClass {
-    String name;
-    String description;
-    
-    public VillainClass (String[] line) {
-        this.name = line[0];
-        this.description = line[1];
-    }
+public class VillainClasses {
+    List<VillainClass> villainClasses;
 }
