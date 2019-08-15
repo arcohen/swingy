@@ -12,16 +12,24 @@ import java.util.List;
  * @author arcohen
  */
 public class Villain extends Character {
-    private VillainClass villainClass;
+    private List<VillainClass> villainClasses;
     
-    public Villain(int size, List<Villain> villains) {
+    public Villain(int size, List<VillainClass> villainClasses) {
         coordinates = new Coordinates(size);
+
+
+
+        int playerCoordinate = size / 2 + 1;
         
-        for (int i = 0; i < villains.size(); i++) {
-            if (villains.get(i).coordinates.exists(this.coordinates)) {
+        for (int i = 0; i < villainClasses.size(); i++) {
+            if (villainClasses.get(i).coordinates.exists(this.coordinates) || (coordinates.getX() ==  playerCoordinate && coordinates.getY() ==  playerCoordinate )) {
                 this.coordinates.newCoordinates(size);
                 i = 0;
             }
         }
+    }
+
+    public VillainClass getVillainClass() {
+        return villainClass;
     }
 }

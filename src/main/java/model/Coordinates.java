@@ -24,10 +24,14 @@ public class Coordinates {
         this.x = ThreadLocalRandom.current().nextInt(0, size);
         this.y = ThreadLocalRandom.current().nextInt(0, size);
     }
-    
+
     public Coordinates() {
-        this.x = 4;
-        this.y = 4;
+
+    }
+    
+    public void initPlayerCoordinates(int size) {
+        this.x = size / 2 + 1;
+        this.y = size / 2 + 1;
     }
     
     public int getX() {
@@ -37,7 +41,15 @@ public class Coordinates {
     public int getY() {
         return this.y; 
     }
+
+    public void updateX(int x) {
+        this.x += x;
+    }
     
+    public void updateY(int y) {
+        this.y += y;
+    }
+
     public boolean exists(Coordinates coordinates) {
         if (this.x == coordinates.getX() && this.y == coordinates.getY())
             return true;

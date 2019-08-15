@@ -1,0 +1,2 @@
+##Format: name;description;hitPoints;attack;defense
+Goblin;Known for hiding under bridges and for bad breath

@@ -17,4 +17,12 @@ public class VillainClass {
         this.name = line[0];
         this.description = line[1];
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

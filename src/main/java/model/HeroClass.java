@@ -12,11 +12,11 @@ import static java.lang.Integer.parseInt;
  * @author arcohen
  */
 public class HeroClass {
-    private String name;
-    private String description;
-    private int hitPoints;
-    private int attack;
-    private int defense;
+    protected String name;
+    protected String description;
+    protected int hitPoints;
+    protected int attack;
+    protected int defense; 
     
     public HeroClass(String[] line) {
         try
@@ -27,9 +27,9 @@ public class HeroClass {
             this.attack = parseInt(line[3]);
             this.defense = parseInt(line[4]);
         }
-        catch (Exception(e))
+        catch (Exception e)
         {
-                
+            System.out.println("Error in hero class info file");    
         }
     }
 }

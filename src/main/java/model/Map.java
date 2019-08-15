@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,13 +16,21 @@ public class Map {
     int size;
     List<Villain> villains;
     
-    public Map(int level) {
-        size = (level - 1) * 5 + 10 - (level % 2);
+    public Map(int level, List<VillainClass> villainClasses) {
+        List<Villain> villains = new ArrayList<Villain>();
+        int size = (level - 1) * 5 + 10 - (level % 2);
         
         int villainNumber = (int) Math.round(size * size - size * size / 1.5);
         for (int i = 0; i < villainNumber; i++) {
-            Villain villain = new Villain(size, villains);
+            Villain villain = new Villain(size, villainClasses);
             villains.add(villain);
         }
+
+        this.size = size;
+        this.villains = villains;
+    }
+
+    public int getSize() {
+        return size;
     }
 }

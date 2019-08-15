@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,26 +14,37 @@ import java.util.List;
  * @author arcohen
  */
 public class VillainClasses {
+
     List<VillainClass> villainClasses;
-    
+
+    public VillainClasses() {
         String filePath = "../../../CharacterInfo/villain_classes.txt";
+        List<VillainClass> villainClasses = new ArrayList<VillainClass>();
         
-    try 
-    {
-        ReadFile file = new ReadFile(filePath);
-        ArrayList<String> textLines = file.OpenFile();
-        
-        textLines.remove(0);
-        
-        for (String line : textLines) {
-            String[] villainInfo;
-            villainInfo = line.split(";");
-            VillainClass villain = new VillainClass(villainInfo);
-            villainClasses.add(villain);
+        try 
+        {
+            ReadFile file = new ReadFile(filePath);
+            ArrayList<String> textLines = file.OpenFile();
+            
+            textLines.remove(0);
+            
+            for (String line : textLines) {
+                String[] villainInfo;
+                villainInfo = line.split(";");
+                VillainClass villain = new VillainClass(villainInfo);
+                villainClasses.add(villain);
+            }
+
+            this.villainClasses = villainClasses;
         }
-    } 
-    catch (IOExeption e) 
-    {
-        System.out.println(e.Message());
+        catch (IOException e) 
+        {
+            System.out.println(e.getMessage());
+        }
     }
+
+    public List<VillainClass> getVillainClasses() {
+        return this.villainClasses;
+    }
+
 }

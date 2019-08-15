@@ -21,7 +21,7 @@ public class ReadFile {
         path = filePath;
     }
     
-    public ArrayList<String> OpenFile() throws IOExeption {
+    public ArrayList<String> OpenFile() throws IOException {
         FileReader fileReader = new FileReader(path);
         BufferedReader textReader = new BufferedReader(fileReader);
         

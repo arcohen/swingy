@@ -5,6 +5,7 @@
  */
 package model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,27 +14,37 @@ import java.util.List;
  * @author arcohen
  */
 public class HeroClasses {
+
     List<HeroClass> heroClasses;
     
-    String filePath = "../../../CharacterInfo/hero_classes.txt";
+    public HeroClasses() {
+        List<HeroClass> heroClasses = new ArrayList<HeroClass>();
+        String filePath = "../../../CharacterInfo/hero_classes.txt";
         
-    try 
-    {
-        ReadFile file = new ReadFile(filePath);
-        ArrayList<String> textLines = file.OpenFile();
-        
-        textLines.remove(0);
-        
-        for (String line : textLines) {
-            String[] heroInfo;
-            heroInfo = line.split(";");
-            HeroClass hero = new HeroClass(heroInfo);
-            heroClasses.add(hero);
+        try 
+        {
+    
+            ReadFile file = new ReadFile(filePath);
+            ArrayList<String> textLines = file.OpenFile();
+            
+            textLines.remove(0);
+            
+            for (String line : textLines) {
+                String[] heroInfo;
+                heroInfo = line.split(";");
+                HeroClass hero = new HeroClass(heroInfo);
+                heroClasses.add(hero);
+            }
+            this.heroClasses = heroClasses;
+        } 
+        catch (IOException e) 
+        {
+            System.out.println(e.getMessage());
         }
-    } 
-    catch (IOExeption e) 
-    {
-        System.out.println(e.Message());
+    }
+
+    public List<HeroClass> getHeroClasses() {
+        return this.heroClasses;
     }
     
 }
