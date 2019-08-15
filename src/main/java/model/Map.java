@@ -17,12 +17,14 @@ public class Map {
     List<Villain> villains;
     
     public Map(int level, List<VillainClass> villainClasses) {
-        List<Villain> villains = new ArrayList<Villain>();
+        
         int size = (level - 1) * 5 + 10 - (level % 2);
+        List<Villain> villains = new ArrayList<Villain>();
         
         int villainNumber = (int) Math.round(size * size - size * size / 1.5);
+
         for (int i = 0; i < villainNumber; i++) {
-            Villain villain = new Villain(size, villainClasses);
+            Villain villain = new Villain(size, villainClasses, villains);
             villains.add(villain);
         }
 

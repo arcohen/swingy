@@ -6,23 +6,24 @@
 package model;
 
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
  * @author arcohen
  */
 public class Villain extends Character {
-    private List<VillainClass> villainClasses;
+    private VillainClass villainClass;
     
-    public Villain(int size, List<VillainClass> villainClasses) {
+    public Villain(int size, List<VillainClass> villainClasses, List<Villain> villains) {
         coordinates = new Coordinates(size);
 
-
-
         int playerCoordinate = size / 2 + 1;
+
+        this.villainClass = villainClasses.get(ThreadLocalRandom.current().nextInt(0, villainClasses.size()));
         
-        for (int i = 0; i < villainClasses.size(); i++) {
-            if (villainClasses.get(i).coordinates.exists(this.coordinates) || (coordinates.getX() ==  playerCoordinate && coordinates.getY() ==  playerCoordinate )) {
+        for (int i = 0; i < villains.size(); i++) {
+            if (villains.get(i).coordinates.exists(this.coordinates) || (coordinates.getX() ==  playerCoordinate && coordinates.getY() ==  playerCoordinate )) {
                 this.coordinates.newCoordinates(size);
                 i = 0;
             }
