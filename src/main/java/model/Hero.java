@@ -17,12 +17,14 @@ public class Hero extends Character {
     private int level;
     private int xp;
     private List<Artifact> artifacts;
+    private VillainClasses villainClasses;
     private Map map;
     
-    public Hero(HeroClass heroClass, List<VillainClass> villainClasses, String name) {
+    public Hero(HeroClass heroClass, VillainClasses villainClasses, String name) {
         this.attack = heroClass.attack;
         this.defense = heroClass.defense;
         this.hitPoints = heroClass.hitPoints;
+        this.villainClasses = villainClasses;
         //this.heroClass = heroClass;
         
         this.name = name;
@@ -58,7 +60,7 @@ public class Hero extends Character {
     }
 
     public void setMap(int level) {
-        this.map = new Map(level);
+        this.map = new Map(level, villainClasses);
     }
 
     public List<Artifact> getArtifacts() {

@@ -16,7 +16,7 @@ public class Map {
     int size;
     List<Villain> villains;
     
-    public Map(int level, List<VillainClass> villainClasses) {
+    public Map(int level, VillainClasses villainClasses) {
         
         int size = (level - 1) * 5 + 10 - (level % 2);
         List<Villain> villains = new ArrayList<Villain>();

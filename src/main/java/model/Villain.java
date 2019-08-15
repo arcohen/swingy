@@ -15,12 +15,15 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Villain extends Character {
     private VillainClass villainClass;
     
-    public Villain(int size, List<VillainClass> villainClasses, List<Villain> villains) {
+    public Villain(int size, VillainClasses villainClasses, List<Villain> villains) {
+        
         coordinates = new Coordinates(size);
 
         int playerCoordinate = size / 2 + 1;
+        
+        List<VillainClass> villainClassList = villainClasses.getVillainClasses();
 
-        this.villainClass = villainClasses.get(ThreadLocalRandom.current().nextInt(0, villainClasses.size()));
+        this.villainClass = villainClassList.get(ThreadLocalRandom.current().nextInt(0, villainClassList.size()));
         
         for (int i = 0; i < villains.size(); i++) {
             if (villains.get(i).coordinates.exists(this.coordinates) || (coordinates.getX() ==  playerCoordinate && coordinates.getY() ==  playerCoordinate )) {
@@ -34,3 +37,4 @@ public class Villain extends Character {
         return villainClass;
     }
 }
+
