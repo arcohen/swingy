@@ -10,7 +10,25 @@ package model;
  * @author arcohen
  */
 public class Artifact {
-    String name;
-    String type;
-    int points;
+    private String name;
+    private String categoryOfEffect;
+    private int points;
+
+    public Artifact(String name, String categoryOfEffect, int points) {
+        this.name = name;
+        this.categoryOfEffect = categoryOfEffect;
+        this.points = points;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getCategoryOfEffect() {
+        return this.categoryOfEffect;
+    }
+
+    public int getPoints() {
+        return this.points;
+    }
 }

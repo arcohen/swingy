@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 /*
  * main to test initial model. 
  */
@@ -23,7 +25,14 @@ public class Main {
         System.out.println("X coordinate: " + hero.getCoordinates().getX());
         System.out.println("Y coordinate: " + hero.getCoordinates().getY());
         System.out.println("Map size: " + hero.getMap().getSize());
+
+        List<Villain> villains = hero.getMap().getVillains();
+
+        for (Villain villain : villains) {
+            System.out.println(villain.getVillainClass().getName());
+            System.out.println(villain.getVillainClass().getDescription());
+            System.out.println(villain.getCoordinates().getX() + "," + villain.getCoordinates().getY());
+            System.out.println("   -----------------------");
+        }
     } 
 }
-
- 

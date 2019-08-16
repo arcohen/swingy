@@ -35,4 +35,8 @@ public class Map {
     public int getSize() {
         return size;
     }
+
+    public List<Villain> getVillains() {
+        return  villains;
+    }
 }

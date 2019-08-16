@@ -1,2 +1,4 @@
-##Format: name;description;hitPoints;attack;defense
-Goblin;Known for hiding under bridges and for bad breath;
+##Format: name;description
+Goblin;Known for hiding under bridges
+Ogre;Ugly motherfucker will club you with a club
+Evil Wizard;Will shoot you with his magic stick

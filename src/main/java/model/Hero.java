@@ -16,7 +16,7 @@ public class Hero extends Character {
     private String name;
     private int level;
     private int xp;
-    private List<Artifact> artifacts;
+    private Artifacts artifacts;
     private VillainClasses villainClasses;
     private Map map;
     
@@ -29,6 +29,8 @@ public class Hero extends Character {
         this.heroClass = heroClass;
         
         this.name = name;
+
+        this.artifacts = new Artifacts();
         
         Coordinates coordinates = new Coordinates();
         coordinates.initPlayerCoordinates(9);
@@ -69,7 +71,7 @@ public class Hero extends Character {
         return this.heroClass;
     }
 
-    public List<Artifact> getArtifacts() {
+    public Artifacts getArtifacts() {
         return artifacts;
     }
 

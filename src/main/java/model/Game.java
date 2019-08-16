@@ -5,12 +5,24 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
+import model.*;
 
 /**
  *
  * @author arcohen
  */
 public class Game {
-    List<Hero> heroes;
+    m_modal = model;
+    
+    private List<Hero> heroes;
+
+    public Game() {
+        this.heroes = new ArrayList<Hero>(); //pull from db
+    }
+
+    Hero getHero(String name) {
+
+    }
 }

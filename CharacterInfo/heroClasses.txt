@@ -1,2 +1,4 @@
 ##Format: name;description;hitPoints;attack;defense
 Fairy;Has wings and is super agile which aids in defense. Fairies aren't known for for their structural integrity;8;5;2
+Magician;Has a wand. Can do magic;6;10;5
+Bob;He's just a dude;2;2;2
