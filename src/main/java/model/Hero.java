@@ -12,7 +12,7 @@ import java.util.List;
  * @author arcohen
  */
 public class Hero extends Character {
-    //private HeroClass heroClass;
+    private HeroClass heroClass;
     private String name;
     private int level;
     private int xp;
@@ -21,18 +21,20 @@ public class Hero extends Character {
     private Map map;
     
     public Hero(HeroClass heroClass, VillainClasses villainClasses, String name) {
-        this.attack = heroClass.attack;
-        this.defense = heroClass.defense;
-        this.hitPoints = heroClass.hitPoints;
+        setAttack(heroClass.attack);
+        setDefense(heroClass.defense);
+        setHitPoints(heroClass.hitPoints);
+        this.level = 1;
         this.villainClasses = villainClasses;
-        //this.heroClass = heroClass;
+        this.heroClass = heroClass;
         
         this.name = name;
         
-        coordinates = new Coordinates();
+        Coordinates coordinates = new Coordinates();
         coordinates.initPlayerCoordinates(9);
+        this.setCoordinates(coordinates);
         
-        this.map = new Map(1, villainClasses);
+        this.map = new Map(this.level, villainClasses);
     }
 
     public String getName() {
@@ -63,10 +65,13 @@ public class Hero extends Character {
         this.map = new Map(level, villainClasses);
     }
 
+    public HeroClass getHeroClass() {
+        return this.heroClass;
+    }
+
     public List<Artifact> getArtifacts() {
         return artifacts;
     }
-
 
 }
   

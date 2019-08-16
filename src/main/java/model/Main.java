@@ -6,7 +6,7 @@ package model;
 
 public class Main {
     
-    public static void main(String args) {
+    public static void main(String[] args) {
 
         HeroClasses heroClasses = new HeroClasses();
         VillainClasses villainClasses = new VillainClasses();
@@ -15,12 +15,14 @@ public class Main {
         
         hero.setXp(100);
 
-        System.out.println(hero.getName());
-        System.out.println(hero.getLevel());
-        System.out.println(hero.getXp());
-        System.out.println(hero.);
-        System.out.println(hero.xxxxx);
-        System.out.println(hero.xxxxx);
+        System.out.println("Name: " + hero.getName());
+        System.out.println("Hero type: " + hero.getHeroClass().getName());
+        System.out.println("Hero description: " + hero.getHeroClass().getDescription());
+        System.out.println("Level: " + hero.getLevel());
+        System.out.println("Xp: " + hero.getXp());
+        System.out.println("X coordinate: " + hero.getCoordinates().getX());
+        System.out.println("Y coordinate: " + hero.getCoordinates().getY());
+        System.out.println("Map size: " + hero.getMap().getSize());
     } 
 }
 

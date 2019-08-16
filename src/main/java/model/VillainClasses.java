@@ -18,7 +18,7 @@ public class VillainClasses {
     List<VillainClass> villainClasses;
 
     public VillainClasses() {
-        String filePath = "../../../CharacterInfo/villain_classes.txt";
+        String filePath = "../../../../CharacterInfo/villainClasses.txt";
         List<VillainClass> villainClasses = new ArrayList<VillainClass>();
         
         try 

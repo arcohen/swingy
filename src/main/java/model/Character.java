@@ -10,10 +10,10 @@ package model;
  * @author arcohen
  */
 public class Character {
-    int hitPoints;
-    int attack;
-    int defense;
-    Coordinates coordinates;
+    private int hitPoints;
+    private int attack;
+    private int defense;
+    private Coordinates coordinates;
 
     public int getHitPoints() {
         return hitPoints;

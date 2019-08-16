@@ -32,4 +32,12 @@ public class HeroClass {
             System.out.println("Error in hero class info file");    
         }
     }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
 }

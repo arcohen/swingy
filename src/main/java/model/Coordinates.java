@@ -42,11 +42,8 @@ public class Coordinates {
         return this.y; 
     }
 
-    public void updateX(int x) {
+    public void update(int x, int y) {
         this.x += x;
-    }
-    
-    public void updateY(int y) {
         this.y += y;
     }
 

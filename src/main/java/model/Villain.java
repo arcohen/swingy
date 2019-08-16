@@ -17,7 +17,7 @@ public class Villain extends Character {
     
     public Villain(int size, VillainClasses villainClasses, List<Villain> villains) {
         
-        coordinates = new Coordinates(size);
+        Coordinates coordinates = new Coordinates(size);
 
         int playerCoordinate = size / 2 + 1;
         
@@ -25,16 +25,19 @@ public class Villain extends Character {
 
         this.villainClass = villainClassList.get(ThreadLocalRandom.current().nextInt(0, villainClassList.size()));
         
-        for (int i = 0; i < villains.size(); i++) {
-            if (villains.get(i).coordinates.exists(this.coordinates) || (coordinates.getX() ==  playerCoordinate && coordinates.getY() ==  playerCoordinate )) {
-                this.coordinates.newCoordinates(size);
-                i = 0;
+        if (villains.isEmpty() == false) {
+            for (int i = 0; i < villains.size(); i++) {
+                if (villains.get(i).getCoordinates().exists(coordinates) || (coordinates.getX() ==  playerCoordinate && coordinates.getY() ==  playerCoordinate )) {
+                    coordinates.newCoordinates(size);
+                    i = 0;
+                }
             }
         }
+
+        this.setCoordinates(coordinates);
     }
 
     public VillainClass getVillainClass() {
         return villainClass;
     }
 }
-
