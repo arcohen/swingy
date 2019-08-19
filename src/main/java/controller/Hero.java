@@ -2,9 +2,7 @@ package controller;
 
 public class Hero {
 
-    Hero hero;
-
-    Hero() {
-        model.Hero();
+    model.Hero getHero(model.Hero hero) {
+        return hero;
     }
 }

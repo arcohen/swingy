@@ -3,26 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+// package model;
 
-import java.util.ArrayList;
-import java.util.List;
-import model.*;
+// import java.util.ArrayList;
+// import java.util.List;
+// import model.*;
 
-/**
- *
- * @author arcohen
- */
-public class Game {
-    m_modal = model;
+// /**
+//  *
+//  * @author arcohen
+//  */
+// public class Game {
     
-    private List<Hero> heroes;
+//     private List<Hero> heroes;
 
-    public Game() {
-        this.heroes = new ArrayList<Hero>(); //pull from db
-    }
+//     public Game() {
+//         this.heroes = new ArrayList<Hero>(); //pull from db
+//     }
 
-    Hero getHero(String name) {
+//     Hero getHero(String name) {
 
-    }
-}
+//     }
+// }

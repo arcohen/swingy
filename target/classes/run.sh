@@ -1,4 +1,6 @@
 #!/bin/bash
 
 javac -d . *.java
-java -cp . model.Main
+java -cp . Main
+
+rm 
