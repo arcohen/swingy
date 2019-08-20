@@ -7,8 +7,11 @@ public class MapInfoDisplay {
 
     public void start(Hero hero) {
 
+        System.out.println("");
         System.out.println("Welcome " + hero.getName() + " to level " + hero.getLevel());
+        System.out.println("");
         System.out.println("Your stats are as follows");
+        System.out.println("");
         System.out.println("HP: " + hero.getHitPoints());
         System.out.println("XP: " + hero.getXp());
         System.out.println("Attack: " + hero.getAttack());

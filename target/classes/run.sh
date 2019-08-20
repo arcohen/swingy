@@ -3,4 +3,4 @@
 javac -d . *.java
 java -cp . Main
 
-rm 
+find . -name "*.class" -delete

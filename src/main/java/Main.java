@@ -13,48 +13,38 @@ public class Main {
 
 
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         model.HeroClasses heroClasses = new model.HeroClasses();
         model.VillainClasses villainClasses = new model.VillainClasses();
 
         view.HeroClassesView HeroClassesView = new view.HeroClassesView();
         view.MapInfoDisplay mapInfoDisplay = new MapInfoDisplay(); 
-
-        controller.HeroClasses heroClassesController = new controller.HeroClasses();
-
-        List<HeroClass> heroClassList = heroClassesController.getHeroClassList(heroClasses);
-
-        // List<model.HeroClass> heroClasses = new controller.getHeroClasses();
+        
+        ParseInput parseInput = new ParseInput();
+        OutputDelay delay = new OutputDelay();
+        
+        if (args.length == 0) {
+            System.out.println("Please provide an argument for console or gui play");
+            throw new Exception();
+        }
+        
+        System.out.println(args[0]);
         
         Scanner input = new Scanner(System.in);
-        OutputDelay delay = new OutputDelay();
-
-        delay.delayOutput(300);
-        System.out.println("\n");
-        System.out.println("       Welcome to SwingyRPG");
-        delay.delayOutput(600);
-        System.out.println("\n");
-        System.out.println("            ----------");
-        System.out.println("            ----------");
-        System.out.println("\n");
-        delay.delayOutput(300);
-        System.out.println("Would you like to play through the (1) console or (2) using the GUI?");
-        System.out.println("Please type 1 or 2");
-
-        int playType;
-
-        while ((playType = input.nextInt()) != 1 && playType != 2) {
-            System.out.println("Please type on 1 or 2");
-        }
-
-        if (playType == 1) {
-
-            System.out.println("Welcome to the game please see the list of available heroes to play with and select one by typing the appropriate number.");
+        
+        if (args[0] == "console") {
+            
+            
+            System.out.println("\n");
+            System.out.println("-------------------------------");
+            System.out.println("--    Welcome to SwingyRPG   --");
+            System.out.println("-------------------------------");
+            
             delay.delayOutput(100);        
-            HeroClassesView.viewHeroClasses(heroClassList);
+            HeroClassesView.viewHeroClasses(heroClasses);
 
-            model.HeroClass heroClass = heroClassList.get(input.nextInt());
+            model.HeroClass heroClass = heroClasses.getHeroClasses().get(parseInput.intRange(input, 1, heroClasses.getHeroClasses().size()) - 1);
 
             System.out.println("Please type the name of your character.");
             String name = input.nextLine();
@@ -64,5 +54,9 @@ public class Main {
             mapInfoDisplay.start(hero);
 
         }
+        else {
+            System.out.println("FUCKEIOUYEOIFOW");
+        }
+        input.close();
     } 
 }

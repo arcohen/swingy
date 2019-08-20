@@ -2,11 +2,11 @@ package controller;
 
 import java.util.List;
 
-import model;
+import model.*;
 
 public class Artifacts {
     
-    public List<model.Artifact> getUserArtifacts() {
-        return model.Artifacts.getArtifacts();
-    } 
+    // public List<model.Artifact> getUserArtifacts() {
+    //     return model.Artifacts.getArtifacts();
+    // } 
 }

@@ -19,7 +19,7 @@ public class HeroClasses {
     
     public HeroClasses() {
         List<HeroClass> heroClasses = new ArrayList<HeroClass>();
-        String filePath = "../../../../CharacterInfo/heroClasses.txt";
+        String filePath = "../../../CharacterInfo/heroClasses.txt";
         
         try 
         {
