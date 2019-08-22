@@ -1,0 +1,11 @@
+## format: name;categoryOfEffect
+Potion;HP
+Bandage;HP
+
+Bandage;HP
+Sword;ATTACK
+Dagger;ATTACK
+Bow;ATTACK
+Helmet;DEFENCE
+Shield;DEFENCE
+Armour;DEFENCE

@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import utilities.*;
+
 /**
  *
  * @author arcohen
@@ -19,12 +21,12 @@ public class HeroClasses {
     
     public HeroClasses() {
         List<HeroClass> heroClasses = new ArrayList<HeroClass>();
-        String filePath = "../../../CharacterInfo/heroClasses.txt";
+        String filePath = "../../../GameSettings/heroClasses.txt";
         
         try 
         {
     
-            ReadFile file = new ReadFile(filePath);
+            utilities.ReadFile file = new ReadFile(filePath);
             ArrayList<String> textLines = file.OpenFile();
             
             textLines.remove(0);

@@ -31,11 +31,7 @@ public class Hero extends Character {
 
         this.artifacts = new Artifacts();
         
-        Coordinates coordinates = new Coordinates();
-        coordinates.initPlayerCoordinates(9);
-        this.setCoordinates(coordinates);
-        
-        this.map = new Map(this.level, villainClasses);
+        this.map = new Map(this.level, this.villainClasses);
     }
 
     public String getName() {

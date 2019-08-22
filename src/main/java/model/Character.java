@@ -13,7 +13,6 @@ public class Character {
     private int hitPoints;
     private int attack;
     private int defense;
-    private Coordinates coordinates;
 
     public int getHitPoints() {
         return hitPoints;
@@ -39,11 +38,4 @@ public class Character {
         this.defense = defense;
     }
 
-    public Coordinates getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(Coordinates coordinates) {
-        this.coordinates = coordinates;
-    }
 }

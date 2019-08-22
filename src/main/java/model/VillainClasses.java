@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import utilities.*;
+
 /**
  *
  * @author arcohen
@@ -18,12 +20,12 @@ public class VillainClasses {
     List<VillainClass> villainClasses;
 
     public VillainClasses() {
-        String filePath = "../../../CharacterInfo/villainClasses.txt";
+        String filePath = "../../../GameSettings/villainClasses.txt";
         List<VillainClass> villainClasses = new ArrayList<VillainClass>();
         
         try 
         {
-            ReadFile file = new ReadFile(filePath);
+            utilities.ReadFile file = new ReadFile(filePath);
             ArrayList<String> textLines = file.OpenFile();
             
             textLines.remove(0);

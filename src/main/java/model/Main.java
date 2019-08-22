@@ -22,17 +22,8 @@ public class Main {
         System.out.println("Hero description: " + hero.getHeroClass().getDescription());
         System.out.println("Level: " + hero.getLevel());
         System.out.println("Xp: " + hero.getXp());
-        System.out.println("X coordinate: " + hero.getCoordinates().getX());
-        System.out.println("Y coordinate: " + hero.getCoordinates().getY());
+
         System.out.println("Map size: " + hero.getMap().getSize());
 
-        List<Villain> villains = hero.getMap().getVillains();
-
-        for (Villain villain : villains) {
-            System.out.println(villain.getVillainClass().getName());
-            System.out.println(villain.getVillainClass().getDescription());
-            System.out.println(villain.getCoordinates().getX() + "," + villain.getCoordinates().getY());
-            System.out.println("   -----------------------");
-        }
     } 
 }

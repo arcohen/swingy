@@ -5,8 +5,11 @@
  */
 package model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import utilities.*;
 
 /**
  *
@@ -14,29 +17,69 @@ import java.util.List;
  */
 public class Map {
     int size;
-    List<Villain> villains;
+    int villainDensity;
+    List<Block> blocks;
+    Block currentBlock;
+    Block previousBlock;
     
     public Map(int level, VillainClasses villainClasses) {
         
-        int size = (level - 1) * 5 + 10 - (level % 2);
-        List<Villain> villains = new ArrayList<Villain>();
-        
-        int villainNumber = (int) Math.round(size * size - size * size / 2);
+        getGameDifficulty();
 
-        for (int i = 0; i < villainNumber; i++) {
-            Villain villain = new Villain(size, villainClasses, villains);
-            villains.add(villain);
+        this.size = (level - 1) * 5 + 10 - (level % 2);
+        List<VillainClass> villainClassList = villainClasses.getVillainClasses();
+        this.blocks = new ArrayList<Block>();
+
+
+        for (int i = 0; i < size * size; i++) {
+            Block block = new Block(i, size, villainDensity, villainClassList);
+            blocks.add(i, block);
         }
 
-        this.size = size;
-        this.villains = villains;
+        this.currentBlock = this.blocks.get(size / 2);
+    }
+
+    public Block changePosition(String direction) {
+
+        int index = blocks.indexOf(currentBlock);
+
+        this.previousBlock = currentBlock;
+        
+        switch (direction) {
+            case "NORTH":
+                return currentBlock = blocks.get(index - size);
+            case "SOUTH":
+                return currentBlock = blocks.get(index + size);
+            case "WEST":
+                return currentBlock = blocks.get(index - 1);
+            case "EAST":
+                return currentBlock = blocks.get(index + size);
+            default:
+                return currentBlock;
+        }
+    }
+
+    private void getGameDifficulty() {
+        try 
+        {
+            String filePath = "../../../GameSettings/difficultySettings.txt";
+
+            utilities.ReadFile file = new ReadFile(filePath);
+            ArrayList<String> textLines = file.OpenFile();
+            
+            this.villainDensity = Integer.parseInt(textLines.get(1)); 
+        }
+        catch (IOException e) 
+        {
+            System.out.println(e.getMessage());
+        }
     }
 
     public int getSize() {
         return size;
     }
 
-    public List<Villain> getVillains() {
-        return  villains;
+    public List<Block> getBlocks() {
+        return  blocks;
     }
 }
