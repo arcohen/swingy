@@ -1,8 +1,7 @@
 ## format: name;categoryOfEffect
 Potion;HP
 Bandage;HP
-
-Bandage;HP
+Manna;HP
 Sword;ATTACK
 Dagger;ATTACK
 Bow;ATTACK

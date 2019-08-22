@@ -13,6 +13,12 @@ public class Artifact {
     private String name;
     private String categoryOfEffect;
     private int points;
+    
+    public Artifact(Artifact artifact, int points) {
+        this.name = artifact.name;
+        this.categoryOfEffect = artifact.categoryOfEffect;
+        this.points = points;
+    }
 
     public Artifact(String name, String categoryOfEffect, int points) {
         this.name = name;

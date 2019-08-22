@@ -5,8 +5,12 @@
  */
 package model;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
+import utilities.ReadFile;
 
 /**
  *
@@ -14,9 +18,43 @@ import java.util.List;
  */
 public class Artifacts {
     private List<Artifact> artifacts;
+    private List<Artifact> artifactTypes;
 
     public Artifacts() {
         this.artifacts = new ArrayList<Artifact>();
+        this.artifactTypes = new ArrayList<Artifact>();
+
+        String filePath = "../../../GameSettings/artifacts.txt";
+        
+        try 
+        {
+    
+            utilities.ReadFile file = new ReadFile(filePath);
+            ArrayList<String> textLines = file.OpenFile();
+            
+            textLines.remove(0);
+            
+            for (String line : textLines) {
+                String[] artifactInfo;
+                artifactInfo = line.split(";");
+                Artifact artifact = new Artifact(artifactInfo[0], artifactInfo[1], 0);
+                artifactTypes.add(artifact);
+            }
+        } 
+        catch (IOException e) 
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public Artifact generateArtifact(Hero hero) {
+
+        int points = (hero.getLevel() * 10 -  ThreadLocalRandom.current().nextInt(1, 10)) / 2;
+
+        if (points < 1)
+            points = 1;
+
+        return new Artifact(artifactTypes.get(ThreadLocalRandom.current().nextInt(0, artifactTypes.size())), points);
     }
 
     public List<Artifact> getArtifacts() {
