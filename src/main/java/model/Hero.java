@@ -17,6 +17,7 @@ public class Hero extends Character {
     private Artifacts artifacts;
     private VillainClasses villainClasses;
     private Map map;
+    private int id;
     
     public Hero(HeroClass heroClass, VillainClasses villainClasses, String name) {
         setAttack(heroClass.attack);
@@ -68,6 +69,10 @@ public class Hero extends Character {
 
     public Artifacts getArtifacts() {
         return artifacts;
+    }
+
+    public int getId() {
+        return id;
     }
 
 }

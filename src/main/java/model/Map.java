@@ -18,6 +18,7 @@ import utilities.*;
 public class Map {
     int size;
     int villainDensity;
+    int villainStrength;
     List<Block> blocks;
     Block currentBlock;
     Block previousBlock;
@@ -32,7 +33,7 @@ public class Map {
 
 
         for (int i = 0; i < size * size; i++) {
-            Block block = new Block(i, size, villainDensity, villainClassList);
+            Block block = new Block(i, size, villainDensity, villainClassList, level, villainStrength);
             blocks.add(i, block);
         }
 
@@ -81,5 +82,9 @@ public class Map {
 
     public List<Block> getBlocks() {
         return  blocks;
+    }
+    
+    public Block getCurrentBlock() {
+        return currentBlock;
     }
 }

@@ -1,2 +1,4 @@
 ##Villain density format int x/1000
 420
+#Villain strength x/100
+80

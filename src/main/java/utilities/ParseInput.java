@@ -4,7 +4,13 @@ import java.util.Scanner;
 
 public class ParseInput {
 
-    public int intRange(Scanner input, int lower, int higher) {
+    Scanner input;
+
+    public ParseInput() {
+        this.input = new Scanner(System.in);
+    }
+
+    public int intRange(int lower, int higher) {
 
         int userInput;
        
@@ -22,5 +28,9 @@ public class ParseInput {
             System.out.println("Please select a number between " + lower + " and " + higher);
         }
         return 0;
+    }
+
+    public String string() {
+        return input.nextLine();
     }
 }

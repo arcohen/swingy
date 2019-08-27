@@ -15,10 +15,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Villain extends Character {
     private VillainClass villainClass;
     
-    public Villain(List<VillainClass> villainClasses) {
-        
+    public Villain(List<VillainClass> villainClasses, int level, int villainStrength) {
         this.villainClass = villainClasses.get(ThreadLocalRandom.current().nextInt(0, villainClasses.size()));
-    }
+
+        this.setAttack(ThreadLocalRandom.current().nextInt(1, 10) * level * villainStrength / 100);
+        this.setDefense(ThreadLocalRandom.current().nextInt(1, 10) * level * villainStrength / 100);
+        this.setHitPoints(ThreadLocalRandom.current().nextInt(1, 10) * level * villainStrength / 100);
+    }   
 
     public VillainClass getVillainClass() {
         return villainClass;
