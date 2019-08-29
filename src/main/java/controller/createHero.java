@@ -15,12 +15,12 @@ public class createHero {
 
         new HeroClassesView(heroClasses);
 
-        model.HeroClass heroClass = heroClasses.getHeroClasses().get(parseInput.intRange(1, heroClasses.getHeroClasses().size()) - 1);
+        HeroClass heroClass = heroClasses.getHeroClasses().get(parseInput.intRange(1, heroClasses.getHeroClasses().size()) - 1);
         String name = parseInput.string();
 
         Hero hero = new Hero(heroClass, villainClasses, name);
         new SavedHeroes().saveHero(hero);
 
-        new StartLevel(hero);
+        new StartLevel(hero.getId());
     }
 }

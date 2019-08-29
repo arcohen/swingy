@@ -1,12 +1,14 @@
 package controller;
 
 import model.Hero;
-import view.UserOutput;
+import view.*;
 
 public class Move {
     public Move(Hero hero) {
-        if (hero.getMap().getCurrentBlock())
-            new UserOutput("");
+
+        new ViewLocation(hero);
+
+        
             
     }
 }

@@ -18,9 +18,9 @@ public class Villain extends Character {
     public Villain(List<VillainClass> villainClasses, int level, int villainStrength) {
         this.villainClass = villainClasses.get(ThreadLocalRandom.current().nextInt(0, villainClasses.size()));
 
-        this.setAttack(ThreadLocalRandom.current().nextInt(1, 10) * level * villainStrength / 100);
-        this.setDefense(ThreadLocalRandom.current().nextInt(1, 10) * level * villainStrength / 100);
-        this.setHitPoints(ThreadLocalRandom.current().nextInt(1, 10) * level * villainStrength / 100);
+        this.setAttack(ThreadLocalRandom.current().nextInt(1, 10) * level);
+        this.setDefense(ThreadLocalRandom.current().nextInt(1, 10) * level);
+        this.setHitPoints(ThreadLocalRandom.current().nextInt(1, 10) * level);
     }   
 
     public VillainClass getVillainClass() {
