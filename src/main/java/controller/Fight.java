@@ -12,14 +12,12 @@ public class Fight {
     UserOutput o = new UserOutput();
     OutputDelay delay;
     NewArtifact newArtifact;
-    Move move;
 
     public Fight(Hero hero, NewSquare newSquare) {
         this.hero = hero;
         this.delay = new OutputDelay();
         this.newSquare = newSquare;
         this.newArtifact = new NewArtifact();
-        this.move
     }
 
     public void fightVillain(Villain villain) {
@@ -38,6 +36,8 @@ public class Fight {
 
         
         if (heroHP < 1) {
+            /* LOSE BATTLE */
+            
             o.output(" -------");
             o.output("GAME OVER");
             o.output(" -------");
@@ -46,6 +46,8 @@ public class Fight {
             new LevelCompleted().startLevel(hero.getId());
         }
         else {
+            /* WIN BATTLE */
+
             o.output("\nYou are victorious!!\n\nYou have taken " + (hero.getHitPoints() - heroHP) + " damage");
             hero.getMap().getCurrentBlock().removeVillain();
             hero.setHitPoints(heroHP);
@@ -58,7 +60,7 @@ public class Fight {
                 new LevelCompleted().completed(hero);
             
             new HeroStatsView(hero);
-            new Move(hero);
+            newSquare.move();
 
     }
         

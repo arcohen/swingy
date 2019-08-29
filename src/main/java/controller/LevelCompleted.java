@@ -15,10 +15,18 @@ public class LevelCompleted {
 
         int level = hero.getLevel();
         int levelLimit = level * 1000 + (level - 1) * (level - 1)  * 450;
-        if (hero.getXp() > levelLimit)
+        if (hero.getXp() > levelLimit){
             hero.setLevel(level++);
 
+            hero.setAttack(hero.getAttack() + 10);
+            hero.setDefense(hero.getDefense() + 10);
+            hero.setFullHP(hero.getFullHP() + 10);
+            hero.setHitPoints(hero.getFullHP());
+        }
+
         o.output("Congratulations map completed!\nYou are now on level " + hero.getLevel());
+
+        o.output("Your stats have been increased by 10 points\n");
         
         new SavedHeroes().saveHero(hero);
         o.output("         ----------");

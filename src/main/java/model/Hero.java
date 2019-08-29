@@ -23,6 +23,7 @@ public class Hero extends Character {
         setAttack(heroClass.attack);
         setDefense(heroClass.defense);
         setHitPoints(heroClass.hitPoints);
+        
         this.level = 1;
         this.xp = 1000;
         this.villainClasses = villainClasses;

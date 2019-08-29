@@ -10,6 +10,7 @@ package model;
  * @author arcohen
  */
 public class Character {
+    private int fullHP;
     private int hitPoints;
     private int attack;
     private int defense;
@@ -20,6 +21,14 @@ public class Character {
 
     public void setHitPoints(int hitPoints) {
         this.hitPoints = hitPoints;
+    }
+
+    public int getFullHP() {
+        return fullHP;
+    }
+
+    public void setFullHP(int fullHP) {
+        this.fullHP = fullHP;
     }
 
     public int getAttack() {
