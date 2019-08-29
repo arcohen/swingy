@@ -40,23 +40,21 @@ public class Map {
         this.currentBlock = this.blocks.get(size / 2);
     }
 
-    public Block changePosition(String direction) {
+    public void changePosition(int direction) {
 
         int index = blocks.indexOf(currentBlock);
 
         this.previousBlock = currentBlock;
         
         switch (direction) {
-            case "NORTH":
-                return currentBlock = blocks.get(index - size);
-            case "SOUTH":
-                return currentBlock = blocks.get(index + size);
-            case "WEST":
-                return currentBlock = blocks.get(index - 1);
-            case "EAST":
-                return currentBlock = blocks.get(index + size);
-            default:
-                return currentBlock;
+            case 1:     //NORTH
+                this.currentBlock = blocks.get(index - size);
+            case 2:     //SOUTH
+                this.currentBlock = blocks.get(index + size);
+            case 3:     //WEST
+                this.currentBlock = blocks.get(index - 1);
+            case 4:     //EAST
+                this.currentBlock = blocks.get(index + size);
         }
     }
 

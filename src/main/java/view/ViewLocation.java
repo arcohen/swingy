@@ -5,7 +5,14 @@ import java.util.List;
 import model.*;
 
 public class ViewLocation {
-    public ViewLocation (Hero hero) {
+
+    Hero hero;
+
+    public ViewLocation(Hero hero) {
+        this.hero = hero;
+    }
+
+    public void view () {
         List<Block> blocks = hero.getMap().getBlocks();
         int currentLocationIndex = blocks.indexOf(hero.getMap().getCurrentBlock());
         int size = hero.getMap().getSize();

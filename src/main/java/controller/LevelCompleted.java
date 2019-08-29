@@ -4,7 +4,13 @@ import model.*;
 import view.UserOutput;
 
 public class LevelCompleted {
-    public LevelCompleted(Hero hero) {
+
+    public void startLevel(int id) {
+        Hero hero = new SavedHeroes().getHeroes().get(id);
+        new NewSquare(hero);
+    }
+
+    public void completed(Hero hero) {
         UserOutput o = new UserOutput();
 
         int level = hero.getLevel();
@@ -19,6 +25,6 @@ public class LevelCompleted {
         o.output("Your progress has been saved!");
         o.output("         ----------");
 
-        new StartLevel(hero.getId());
+        startLevel(hero.getId());
     }
 }

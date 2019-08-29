@@ -6,7 +6,6 @@ import view.*;
 public class Move {
     public Move(Hero hero) {
 
-        new ViewLocation(hero);
 
         
             

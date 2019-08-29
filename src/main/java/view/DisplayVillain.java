@@ -3,7 +3,13 @@ package view;
 import model.Villain;
 
 public class DisplayVillain {
-    public DisplayVillain(Villain villain) {
+    UserOutput o;
+
+    public DisplayVillain() {
+        this.o = new UserOutput();
+    }
+
+    public void display(Villain villain) {
         UserOutput o = new UserOutput();
         
         o.output("You have encountered a villain\nIt's stats are as follows.\n");
