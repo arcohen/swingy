@@ -3,19 +3,16 @@ package controller;
 import java.util.concurrent.ThreadLocalRandom;
 
 import model.*;
-import utilities.OutputDelay;
 import view.*;
 
 public class Fight {
     NewSquare newSquare;
     Hero hero;
     UserOutput o = new UserOutput();
-    OutputDelay delay;
     NewArtifact newArtifact;
 
     public Fight(Hero hero, NewSquare newSquare) {
         this.hero = hero;
-        this.delay = new OutputDelay();
         this.newSquare = newSquare;
         this.newArtifact = new NewArtifact();
     }

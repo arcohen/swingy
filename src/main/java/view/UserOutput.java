@@ -1,13 +1,8 @@
 package view;
 
-import utilities.OutputDelay;
-
 public class UserOutput {
-    public OutputDelay delay;
 
-    public UserOutput() {
-        this.delay = new OutputDelay();
-    }
+    public UserOutput() {}
 
     public UserOutput(String content) {
         System.out.println(content);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
@@ -25,7 +20,7 @@ public class UserOutput {
         for (int i = 0; i < 5; i++) {
             try        
             {
-                Thread.sleep(800);
+                Thread.sleep(500);
             } 
             catch(InterruptedException ex) 
             {
