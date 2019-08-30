@@ -14,7 +14,7 @@ public class createHero {
         VillainClasses villainClasses = new VillainClasses();
         HeroClasses heroClasses = new HeroClasses();
 
-        o.output("\n Please select a character class from the following list for your hero:\n");
+        o.output("\n Please select a character class\n");
         new HeroClassesView(heroClasses);
         HeroClass heroClass = heroClasses.getHeroClasses().get(parseInput.intRange(1, heroClasses.getHeroClasses().size()) - 1);
 

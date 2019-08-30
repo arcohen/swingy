@@ -1,12 +1,17 @@
 package model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SavedHeroes implements Serializable {
     
     private static final long serialVersionUID = 1L;
     private List<Hero> savedHeroes;
+
+    public SavedHeroes() {
+        savedHeroes = new ArrayList<Hero>();
+    }
     
     public void saveHero(Hero hero) {
         savedHeroes.add(hero);

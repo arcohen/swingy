@@ -39,7 +39,7 @@ public class Fight {
             o.output("GAME OVER");
             o.output(" -------");
             o.output("\nYou have been defeated :[ :[\nThe level will now restart");
-            o.dots();
+            o.dots(5);
             new LevelCompleted().startLevel(hero.getId());
         }
         else {

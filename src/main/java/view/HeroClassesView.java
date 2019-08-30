@@ -10,21 +10,24 @@ public class HeroClassesView {
     public HeroClassesView(HeroClasses heroClasses) {
 
         List<HeroClass> heroClassList = heroClasses.getHeroClasses();
+        UserOutput o = new UserOutput();
     
-        System.out.println("");
-        System.out.println("------------------------------");
-        System.out.println("    Hero classes available    ");
-        System.out.println("------------------------------\n");
+        o.output("");
+        o.output("------------------------------");
+        o.output("    Hero classes available    ");
+        o.output("------------------------------\n");
     
         for (int i = 0; i < heroClassList.size(); i++) {
-            System.out.println("(" + (i + 1) + ")");
-            System.out.println(heroClassList.get(i).getName());
-            System.out.println(heroClassList.get(i).getDescription());
-            System.out.println("");
-            System.out.println("----------");
+            o.output("(" + (i + 1) + ")");
+            o.output(heroClassList.get(i).getName());
+            o.output(heroClassList.get(i).getDescription());
+            o.output("Attack: " + heroClassList.get(i).getAttack());
+            o.output("Defense: " + heroClassList.get(i).getDefense());
+            o.output("HP: " + heroClassList.get(i).gethitPoints());
+            o.output("");
+            o.output("----------");
         }
     
-        System.out.println("");
-        System.out.println("Please select a type");
+        o.output("\nPlease select a type");
     }
 }

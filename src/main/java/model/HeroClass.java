@@ -34,10 +34,22 @@ public class HeroClass {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public String getDescription() {
-        return this.description;
+        return description;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public int gethitPoints() {
+        return hitPoints;
     }
 }

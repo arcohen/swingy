@@ -50,6 +50,9 @@ public class Start {
             
         }
         else {
+
+            o.output("No saved heroes found.");
+            o.delay(500);
             
             savedHeroes = new SavedHeroes();
             

@@ -9,6 +9,7 @@ public class UserOutput {
     }
 
     public void output(String content) {
+        delay(50);
         System.out.println(content);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     }
 
@@ -16,8 +17,9 @@ public class UserOutput {
         System.out.print(content);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     }
 
-    public void dots() {
-        for (int i = 0; i < 5; i++) {
+    public void dots(int multiples) {
+        output("");
+        for (int i = 0; i < multiples; i++) {
             try        
             {
                 Thread.sleep(500);
@@ -27,6 +29,18 @@ public class UserOutput {
                 Thread.currentThread().interrupt();
             }
             outputSansNewLine(".");
+        }
+        output("\n");
+    }
+
+    public void delay(int milliSecs) {
+        try        
+        {
+            Thread.sleep(milliSecs);
+        } 
+        catch(InterruptedException ex) 
+        {
+            Thread.currentThread().interrupt();
         }
     }
 }
