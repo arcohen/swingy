@@ -6,7 +6,7 @@ import utilities.*;
 
 public class createHero {
 
-    public createHero() {
+    public createHero(SavedHeroes savedHeroes) {
 
         ParseInput parseInput = new utilities.ParseInput();
         UserOutput o = new UserOutput();
@@ -21,9 +21,10 @@ public class createHero {
         o.output("Please type a name for your hero:");
         String name = parseInput.string();
 
-        Hero hero = new Hero(heroClass, villainClasses, name);
-        new SavedHeroes().saveHero(hero);
+        Hero hero = new Hero(heroClass, villainClasses, name, savedHeroes);
+        savedHeroes.saveHero(hero);
+        savedHeroes.saveToDB();
 
-        new LevelCompleted().startLevel(hero.getId());
+        new Level().start(hero);
     }
 }

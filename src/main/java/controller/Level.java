@@ -3,10 +3,10 @@ package controller;
 import model.*;
 import view.UserOutput;
 
-public class LevelCompleted {
+public class Level {
 
-    public void startLevel(int id) {
-        Hero hero = new SavedHeroes().getHeroes().get(id);
+    public void start(Hero hero) {
+        hero.setMapInitalHero(hero);
         new NewSquare(hero);
     }
 
@@ -28,11 +28,11 @@ public class LevelCompleted {
 
         o.output("Your stats have been increased by 10 points\n");
         
-        new SavedHeroes().saveHero(hero);
+        new SavedHeroes().saveToDB();
         o.output("         ----------");
         o.output("Your progress has been saved!");
         o.output("         ----------");
 
-        startLevel(hero.getId());
+        start(hero);
     }
 }

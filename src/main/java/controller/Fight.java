@@ -40,7 +40,7 @@ public class Fight {
             o.output(" -------");
             o.output("\nYou have been defeated :[ :[\nThe level will now restart");
             o.dots(5);
-            new LevelCompleted().startLevel(hero.getId());
+            new Level().start(hero.getMapInitialHero());
         }
         else {
             /* WIN BATTLE */
@@ -54,7 +54,7 @@ public class Fight {
             hero.setXp(hero.getXp() + villainAttack * 20);
 
             if (hero.getMap().getCurrentBlock().isSidePiece())
-                new LevelCompleted().completed(hero);
+                new Level().completed(hero);
             
             new HeroStatsView(hero);
             newSquare.move();

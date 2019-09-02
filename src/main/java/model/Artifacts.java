@@ -6,6 +6,7 @@
 package model;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -16,7 +17,9 @@ import utilities.ReadFile;
  *
  * @author arcohen
  */
-public class Artifacts {
+public class Artifacts implements Serializable {
+
+    private static final long serialVersionUID = 3L;
     private List<Artifact> artifacts;
     private List<Artifact> artifactTypes;
 

@@ -37,7 +37,7 @@ public class NewSquare {
         else {
             if (currentBlock.isSidePiece()) {
                 new UserOutput("You have landed on a side piece!");
-                new LevelCompleted().completed(hero);
+                new Level().completed(hero);
             }
         }
     }

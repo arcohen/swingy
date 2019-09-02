@@ -5,11 +5,16 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author arcohen
  */
-public class Hero extends Character {
+public class Hero extends Character implements Serializable {
+
+    private static final long serialVersionUID = 2L;
+
     private HeroClass heroClass;
     private String name;
     private int level;
@@ -18,8 +23,10 @@ public class Hero extends Character {
     private VillainClasses villainClasses;
     private Map map;
     private int id;
+    private Hero mapInitialHero;
+    private SavedHeroes savedHeroes;
     
-    public Hero(HeroClass heroClass, VillainClasses villainClasses, String name) {
+    public Hero(HeroClass heroClass, VillainClasses villainClasses, String name, SavedHeroes savedHeroes) {
         setAttack(heroClass.attack);
         setDefense(heroClass.defense);
         setHitPoints(heroClass.hitPoints);
@@ -28,8 +35,9 @@ public class Hero extends Character {
         this.xp = 1000;
         this.villainClasses = villainClasses;
         this.heroClass = heroClass;
-        
         this.name = name;
+
+        this.savedHeroes = savedHeroes;
 
         this.artifacts = new Artifacts();
         
@@ -76,5 +84,20 @@ public class Hero extends Character {
         return id;
     }
 
+    public Hero getMapInitialHero() {
+        return mapInitialHero;
+    }
+
+    public void setMapInitalHero(Hero mapInitialHero) {
+        this.mapInitialHero = mapInitialHero;
+    }
+
+    public SavedHeroes getSavedHeroes() {
+        return savedHeroes;
+    }
+
+    public void setSavedHeroes(SavedHeroes savedHeroes) {
+        this.savedHeroes = savedHeroes;
+    }
+
 }
-  

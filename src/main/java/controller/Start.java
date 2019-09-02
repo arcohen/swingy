@@ -19,7 +19,7 @@ public class Start {
 
     public Start() throws IOException, ClassNotFoundException {
         
-        File savedHeroesFile = new File("../../../GameSetting/savedHeroes.txt");
+        File savedHeroesFile = new File("../../../GameSettings/savedHeroes.txt");
         SavedHeroes savedHeroes;
 
         if (savedHeroesFile.exists()) {
@@ -75,12 +75,13 @@ public class Start {
     private void newCharacter(SavedHeroes savedHeroes) {
 
         o.output("You will now create a new hero..\n");
-        new createHero();
+        new createHero(savedHeroes);
     }
 
     private void loadSavedCharacter(SavedHeroes savedHeroes) {
         new SavedHeroesView(savedHeroes);
-        Hero hero = savedHeroes.getHero(input.intRange(1, savedHeroes.getHeroes().size()));
-        new LevelCompleted().startLevel(hero.getId());
+        Hero hero = savedHeroes.getHero(input.intRange(1, savedHeroes.getHeroes().size()) - 1);
+        hero.setSavedHeroes(savedHeroes);
+        new Level().start(hero);
     }
 }
