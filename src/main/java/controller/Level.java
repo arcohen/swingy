@@ -24,9 +24,9 @@ public class Level {
             hero.setHitPoints(hero.getFullHP());
         }
 
-        o.output("Congratulations map completed!\nYou are now on level " + hero.getLevel());
+        o.output("\nCongratulations map completed!\nYou are now on level " + hero.getLevel());
 
-        o.output("Your stats have been increased by 10 points\n");
+        o.output("\nYour stats have been increased by 10 points\n");
         
         new SavedHeroes().saveToDB();
         o.output("         ----------");

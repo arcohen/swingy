@@ -37,7 +37,7 @@ public class Map {
             blocks.add(i, block);
         }
 
-        this.currentBlock = this.blocks.get(size / 2);
+        this.currentBlock = this.blocks.get(blocks.size() / 2);
     }
 
     public void changePosition(int direction) {
@@ -45,17 +45,22 @@ public class Map {
         int index = blocks.indexOf(currentBlock);
 
         this.previousBlock = currentBlock;
-        
+    
         switch (direction) {
             case 1:     //NORTH
-                this.currentBlock = blocks.get(index - size);
+                currentBlock = blocks.get(index - size);
+                break;
             case 2:     //SOUTH
-                this.currentBlock = blocks.get(index + size);
+                currentBlock = blocks.get(index + size);
+                break;
             case 3:     //WEST
-                this.currentBlock = blocks.get(index - 1);
+                currentBlock = blocks.get(index - 1);
+                break;
             case 4:     //EAST
-                this.currentBlock = blocks.get(index + size);
+                currentBlock = blocks.get(index + 1);
+                break;
         }
+
     }
 
     private void getGameDifficulty() {

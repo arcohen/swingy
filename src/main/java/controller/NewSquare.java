@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import model.*;
 import utilities.ParseInput;
 import view.*;
@@ -19,6 +21,7 @@ public class NewSquare {
         this.viewLocation = new ViewLocation(hero);
         this.parseInput = new ParseInput();
         this.displayVillain = new DisplayVillain();
+        move();
     }
 
     public void moved() {
@@ -27,18 +30,30 @@ public class NewSquare {
         if (currentBlock.containsVillain()){
             
             if (currentBlock.isSidePiece())
-                new UserOutput("You have landed on a side piece defeat villain to complete level");
+                o.output("You have landed on a side piece defeat villain to complete level");
 
             displayVillain.display(currentBlock.getVillain());
             int input = new ParseInput().intRange(1, 2);
-            if (input == 1)
+            if (input == 1) {
                 fight.fightVillain(currentBlock.getVillain());
+            }
+            else {
+                if (ThreadLocalRandom.current().nextBoolean()) {
+                    fight.fightVillain(currentBlock.getVillain());
+                }
+                else {
+                    o.output("You have successfully fled\n");
+                    move();
+                }
+            }
+
         }
         else {
             if (currentBlock.isSidePiece()) {
                 new UserOutput("You have landed on a side piece!");
                 new Level().completed(hero);
             }
+            move();
         }
     }
 

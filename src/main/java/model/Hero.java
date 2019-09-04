@@ -89,7 +89,12 @@ public class Hero extends Character implements Serializable {
     }
 
     public void setMapInitalHero(Hero mapInitialHero) {
-        this.mapInitialHero = mapInitialHero;
+        try {
+            this.mapInitialHero = (Hero) mapInitialHero.clone();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public SavedHeroes getSavedHeroes() {

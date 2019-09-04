@@ -21,10 +21,10 @@ public class Fight {
         int heroHP = hero.getHitPoints();
 
         int villainHP = villain.getHitPoints();
-        int heroAttack = hero.getHitPoints();
-        int villainAttack = villain.getHitPoints();
-        int heroDefense = hero.getHitPoints();
-        int villainDefense = villain.getHitPoints();
+        int heroAttack = hero.getAttack();
+        int villainAttack = villain.getAttack();
+        int heroDefense = hero.getDefense();
+        int villainDefense = villain.getDefense();
         
         while (heroHP > 0 && villainHP > 0) {
             heroHP = attack(villainAttack, heroDefense, heroHP);

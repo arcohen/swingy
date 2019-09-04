@@ -22,12 +22,13 @@ public class ViewLocation {
         for (int i = 0; i < blocks.size(); i++) {
 
             if (i == currentLocationIndex)
-                o.outputSansNewLine("|B| ");
+                o.outputSansNewLine("|X| ");
             else
-                o.outputSansNewLine("|H| ");
+                o.outputSansNewLine("|*| ");
 
-            if (i % size == 0)
-                o.outputSansNewLine("\n");
+            if ((i + 1) % size == 0 && i != 0)
+                o.outputSansNewLine("\n\n");
         }
+        o.output("");
     }
 }

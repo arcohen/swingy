@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author arcohen
  */
-public class Artifact {
+public class Artifact implements Serializable {
     private String name;
     private String categoryOfEffect;
     private int points;
