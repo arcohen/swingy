@@ -15,14 +15,13 @@ public class Hero extends Character implements Serializable {
 
     private static final long serialVersionUID = 2L;
 
-    private HeroClass heroClass;
     private String name;
     private int level;
     private int xp;
     private Artifacts artifacts;
     private VillainClasses villainClasses;
     private Map map;
-    private int id;
+    private int dbId;
     private Hero mapInitialHero;
     private SavedHeroes savedHeroes;
     
@@ -34,10 +33,25 @@ public class Hero extends Character implements Serializable {
         this.level = 1;
         this.xp = 1000;
         this.villainClasses = villainClasses;
-        this.heroClass = heroClass;
         this.name = name;
 
         this.savedHeroes = savedHeroes;
+
+        this.artifacts = new Artifacts();
+        
+        this.map = new Map(this.level, this.villainClasses);
+    }
+
+    public Hero(String name, int heroClass, int dbId, int attack, int defense, int hitPoints, int level, int xp, VillainClasses villainClasses) {
+        setAttack(attack);
+        setDefense(defense);
+        setHitPoints(hitPoints);
+        
+        this.dbId = dbId;
+        this.level = level;
+        this.xp = xp;
+        this.villainClasses = villainClasses;
+        this.name = name;
 
         this.artifacts = new Artifacts();
         
@@ -72,16 +86,12 @@ public class Hero extends Character implements Serializable {
         this.map = new Map(level, villainClasses);
     }
 
-    public HeroClass getHeroClass() {
-        return this.heroClass;
-    }
-
     public Artifacts getArtifacts() {
         return artifacts;
     }
 
-    public int getId() {
-        return id;
+    public int getDbId() {
+        return dbId;
     }
 
     public Hero getMapInitialHero() {
