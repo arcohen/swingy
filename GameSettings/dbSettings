@@ -1,0 +1,18 @@
+password = Q8v[ufmlOXLI
+
+CREATE TABLE `heroes` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT KEY,
+  `Name` varchar(255) NOT NULL,
+  `Attack` int(11) NOT NULL,
+  `Defense` int(11) NOT NULL,
+  `HitPoints` int(11) NOT NULL,
+  `Level` int(11) NOT NULL DEFAULT '1',
+  `XP` int(11) NOT NULL DEFAULT '1000'
+)
+
+
+
+            String sql = 
+                "UPDATE HERO " +
+                "SET (Name = ?, Attack = ?, Defense = ?, HitPoints = ?, Level = ? , XP = ?) " +
+                "WHERE Id = ?";
